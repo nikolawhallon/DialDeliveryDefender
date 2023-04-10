@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cadp0ww05vrbc"]
+
+[ext_resource type="Texture2D" uid="uid://brrcromuy32" path="res://Assets/cash.png" id="1_n7br4"]
+[ext_resource type="LabelSettings" uid="uid://30km1fastxy5" path="res://Resources/main_label_settings.tres" id="2_d04xt"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Cash" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_n7br4")
+expand_mode = 3
+
+[node name="X" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "x"
+label_settings = ExtResource("2_d04xt")
+vertical_alignment = 1
+
+[node name="Quantity" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("2_d04xt")
+vertical_alignment = 1

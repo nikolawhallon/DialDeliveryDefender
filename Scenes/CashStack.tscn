@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://vfknek6ook83"]
+
+[ext_resource type="Texture2D" uid="uid://dkjcceau46hbn" path="res://Assets/cash_stack.png" id="1_fhp30"]
+[ext_resource type="Script" path="res://Scenes/CashStack.gd" id="1_fnxsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mua4k"]
+size = Vector2(16, 12)
+
+[node name="CashStack" type="Area2D"]
+script = ExtResource("1_fnxsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fhp30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mua4k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
