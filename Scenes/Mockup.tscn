@@ -1,0 +1,148 @@
+[gd_scene load_steps=21 format=3 uid="uid://c88kgpa2gq8i7"]
+
+[ext_resource type="Script" path="res://Scenes/Mockup.gd" id="1_hh1si"]
+[ext_resource type="Texture2D" uid="uid://cogmxjy3plcwp" path="res://Assets/skyline.png" id="2_je3yh"]
+[ext_resource type="Texture2D" uid="uid://c8txagjn1dia3" path="res://Assets/sky_with_moon.png" id="2_r46a7"]
+[ext_resource type="Texture2D" uid="uid://bjcbqepcjfgm5" path="res://Assets/sidewalk.png" id="3_te3xy"]
+[ext_resource type="Texture2D" uid="uid://b7dun3d4nhbp4" path="res://Assets/sky_without_moon.png" id="3_wlbqa"]
+[ext_resource type="Texture2D" uid="uid://bjpli6mrnl1n6" path="res://Assets/street.png" id="4_mu6ll"]
+[ext_resource type="Texture2D" uid="uid://bgethdd42s3od" path="res://Assets/brick_a.png" id="5_w8qll"]
+[ext_resource type="Texture2D" uid="uid://bkgbt6xp75bo" path="res://Assets/brick_b.png" id="8_ir4qs"]
+[ext_resource type="Texture2D" uid="uid://b807inqsam246" path="res://Assets/girder.png" id="9_kko1j"]
+[ext_resource type="PackedScene" uid="uid://ft2jfmv6jmyb" path="res://Scenes/Player.tscn" id="10_jkv5p"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ruap"]
+texture = ExtResource("5_w8qll")
+texture_region_size = Vector2i(30, 24)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_drm3r"]
+tile_size = Vector2i(30, 24)
+sources/2 = SubResource("TileSetAtlasSource_6ruap")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqc33"]
+texture = ExtResource("3_te3xy")
+texture_region_size = Vector2i(64, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -12, 32, -12, 32, 12, -32, 12)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_xin4d"]
+tile_size = Vector2i(64, 24)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bqc33")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myele"]
+texture = ExtResource("4_mu6ll")
+texture_region_size = Vector2i(64, 96)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_q1mdo"]
+tile_size = Vector2i(64, 96)
+sources/0 = SubResource("TileSetAtlasSource_myele")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bfbv"]
+texture = ExtResource("8_ir4qs")
+texture_region_size = Vector2i(30, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -12, -15, 12, 15, 12, 15, -12)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -12, -15, 12, 15, 12, 15, -12)
+1:0/0/physics_layer_0/polygon_0/one_way = true
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15, -12, -15, 12, 15, 12, 15, -12)
+2:0/0/physics_layer_0/polygon_0/one_way = true
+
+[sub_resource type="TileSet" id="TileSet_c4gks"]
+tile_size = Vector2i(30, 24)
+physics_layer_0/collision_layer = 1
+sources/3 = SubResource("TileSetAtlasSource_2bfbv")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_514oy"]
+texture = ExtResource("9_kko1j")
+texture_region_size = Vector2i(30, 24)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yyh64"]
+tile_size = Vector2i(30, 24)
+sources/1 = SubResource("TileSetAtlasSource_514oy")
+
+[node name="Mockup" type="Node2D"]
+script = ExtResource("1_hh1si")
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="BuildingsA" type="TileMap" parent="Foreground"]
+tile_set = SubResource("TileSet_drm3r")
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 2, 0, 65537, 65538, 0, 65538, 131074, 0, 131074, 131074, 0, 196610, 131074, 0, 131073, 65538, 0, 196609, 65538, 0, 131072, 2, 0, 196608, 2, 0, 262144, 2, 0, 262145, 65538, 0, 262146, 131074, 0, 131077, 2, 0, 196613, 2, 0, 262149, 2, 0, 131080, 2, 0, 196616, 2, 0, 262152, 2, 0, 131078, 131074, 0, 196614, 131074, 0, 262150, 131074, 0, 131081, 131074, 0, 196617, 131074, 0, 262153, 131074, 0)
+
+[node name="Sidewalk" type="TileMap" parent="Foreground"]
+position = Vector2(0, -48)
+tile_set = SubResource("TileSet_xin4d")
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0)
+
+[node name="Street" type="TileMap" parent="Foreground"]
+position = Vector2(0, -48)
+tile_set = SubResource("TileSet_q1mdo")
+format = 2
+layer_0/tile_data = PackedInt32Array(131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0)
+
+[node name="BuildingsB" type="TileMap" parent="Foreground"]
+tile_set = SubResource("TileSet_c4gks")
+format = 2
+layer_0/tile_data = PackedInt32Array(262147, 3, 0, 262148, 131075, 0, 196611, 3, 0, 196612, 131075, 0, 262161, 3, 0, 262163, 131075, 0, 196627, 131075, 0, 131091, 131075, 0, 196625, 3, 0, 131089, 3, 0, 262162, 65539, 0, 196626, 65539, 0, 131090, 65539, 0)
+
+[node name="Girders" type="TileMap" parent="Foreground"]
+tile_set = SubResource("TileSet_yyh64")
+format = 2
+layer_0/tile_data = PackedInt32Array(262159, 1, 0, 196623, 1, 0, 196622, 1, 0, 196621, 1, 0, 196620, 1, 0, 131085, 1, 0, 196619, 1, 0, 262155, 1, 0)
+
+[node name="Parallax" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="Parallax"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(480, 0)
+
+[node name="Sky1" type="Sprite2D" parent="Parallax/Sky"]
+position = Vector2(80, 60)
+texture = ExtResource("2_r46a7")
+
+[node name="Sky2" type="Sprite2D" parent="Parallax/Sky"]
+position = Vector2(400, 60)
+texture = ExtResource("3_wlbqa")
+
+[node name="Sky3" type="Sprite2D" parent="Parallax/Sky"]
+position = Vector2(240, 60)
+texture = ExtResource("3_wlbqa")
+
+[node name="Skyline" type="ParallaxLayer" parent="Parallax"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(480, 0)
+
+[node name="Skyline1" type="Sprite2D" parent="Parallax/Skyline"]
+position = Vector2(80, 60)
+texture = ExtResource("2_je3yh")
+
+[node name="Skyline2" type="Sprite2D" parent="Parallax/Skyline"]
+position = Vector2(240, 60)
+texture = ExtResource("2_je3yh")
+
+[node name="Skyline3" type="Sprite2D" parent="Parallax/Skyline"]
+position = Vector2(400, 60)
+texture = ExtResource("2_je3yh")
+
+[node name="Player" parent="." instance=ExtResource("10_jkv5p")]
+position = Vector2(104, 25)
