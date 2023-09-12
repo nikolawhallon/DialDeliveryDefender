@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 50.0
-const JUMP_VELOCITY = -120.0
+const JUMP_VELOCITY = -80.0
 
 var gravity = 200.0
 var platforming = false
